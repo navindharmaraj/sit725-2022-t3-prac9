@@ -1,13 +1,13 @@
-const MongoClient = require('mongoDb').MongoClient
-const uri =
-    "mongodb+srv://dbuser666:sit725DataUser@cluster0.q6kyg.mongodb.net/?retryWrites=true&w=majority";
-const dbclient = new MongoClient(uri, { useNewUrlParser: true });
+// const MongoClient = require('mongoDb').MongoClient
+// const uri =
+//     "mongodb+srv://dbuser666:sit725DataUser@cluster0.q6kyg.mongodb.net/?retryWrites=true&w=majority";
+// const dbclient = new MongoClient(uri, { useNewUrlParser: true });
 
-exports.addCollection = async function (collectionName, dataObj) {
+// exports.addCollection = async function (collectionName, dataObj) {
 
-    var dbConnection = await dbclient.connect();
-    var db = await dbConnection.db('test');
-    return await db.collection(collectionName).insertOne(dataObj)
+    // var dbConnection = await dbclient.connect();
+    // var db = await dbConnection.db('test');
+    // return await db.collection(collectionName).insertOne(dataObj)
     //     , function (err, res) {
     //     if (err) throw err;
     //     console.log("1 document inserted");
@@ -36,33 +36,33 @@ exports.addCollection = async function (collectionName, dataObj) {
     //     }
 
     // });
-}
+// }
 
 exports.getCollection = async function (collectionName) {
-    try {
-        var dbConnection = await dbclient.connect();
-        var db = await dbConnection.db('test');
-        var collecationData = await db.collection(collectionName).find({}).toArray();
-        console.log(collecationData)
-        return collecationData
-    } catch (error) {
-        console.log(error)
-    }
+    // try {
+    //     var dbConnection = await dbclient.connect();
+    //     var db = await dbConnection.db('test');
+    //     var collecationData = await db.collection(collectionName).find({}).toArray();
+    //     console.log(collecationData)
+    //     return collecationData
+    // } catch (error) {
+    //     console.log(error)
+    // }
 
 }
 
 exports.testConnection = async function (collectionName){
-    console.log(collectionName)
-    client.connect((err,db)=>{
-        projectCollection = client.db().collection(collectionName);
-        if(!err){
-            console.log('Mongo DB COnnected');
+    // console.log(collectionName)
+    // client.connect((err,db)=>{
+    //     projectCollection = client.db().collection(collectionName);
+    //     if(!err){
+    //         console.log('Mongo DB COnnected');
 
-        }
-        else{
-            console.log("DB Error : ", err);
-            process.exit(1)
-        }
-    });
+    //     }
+    //     else{
+    //         console.log("DB Error : ", err);
+    //         process.exit(1)
+    //     }
+    // });
 }
 

@@ -1,11 +1,7 @@
-FROM node:lts-alpine
-ENV NODE_ENV=production
-ENV VAR1=1
-WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
+FROM node:16-alpine
+WORKDIR /app
+COPY package.json ./
+RUN npm install --unsafe-perm=true --allow-root
 COPY . .
 EXPOSE 3003
-RUN chown -R node /usr/src/app
-USER node
-CMD ["node", "index.js"]
+CMD ["npm", "start"]

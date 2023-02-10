@@ -1,7 +1,7 @@
 {
-  "name": "sit725-2022-t3-prac2",
+  "name": "sit725-2022-t3-prac9",
   "version": "1.0.0",
-  "description": "Rest API and Express",
+  "description": "Docker",
   "main": "index.js",
   "scripts": {
     "start":"nodemon index.js",
